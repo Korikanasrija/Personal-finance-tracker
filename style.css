@@ -1,0 +1,156 @@
+/* Core resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.tracker-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h3 {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin: 30px 0 10px;
+    color: #444;
+}
+
+/* Balance display styling */
+.balance-card {
+    text-align: center;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Summary panels */
+.summary-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.summary-box {
+    flex: 1;
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.summary-box.income h4 { color: #2ecc71; }
+.summary-box.income p { color: #2ecc71; font-weight: bold; font-size: 1.2rem; }
+
+.summary-box.expense h4 { color: #e74c3c; }
+.summary-box.expense p { color: #e74c3c; font-weight: bold; font-size: 1.2rem; }
+
+/* Transaction history list layout */
+.list {
+    list-style-type: none;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.list li {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Left-side accent color borders indicating status */
+.list li.plus { border-left: 5px solid #2ecc71; }
+.list li.minus { border-left: 5px solid #e74c3c; }
+
+/* Invisible delete button that appears on hover */
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 2px 8px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 3px 0 0 3px;
+}
+
+.list li:hover .delete-btn {
+    opacity: 1;
+}
+
+/* Form Styling */
+.form-control {
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #666;
+    font-weight: 600;
+}
+
+input {
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: #4facfe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: #3b93e3;
+}
